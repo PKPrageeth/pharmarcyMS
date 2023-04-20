@@ -2,9 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\MyMail;
 use App\Models\prescription;
 use App\Models\quotation;
+use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
 
 class QuotationController extends Controller
 {
@@ -107,6 +110,11 @@ class QuotationController extends Controller
         $pres = prescription::find($request->id);
         $pres->status = "complete";
         $pres->save();
+
+        $client=User::find($pres->user);
+//        Mail::to($client->email)->send(new MyMail());
+
+
         return redirect(route('admin.list.prescription.page'));
 
     }
