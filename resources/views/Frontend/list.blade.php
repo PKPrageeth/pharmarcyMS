@@ -5,7 +5,7 @@
     <div class="container">
         <div class="row justify-content-center">
             <div class="row">
-                <div class="col-md-2  m-2"><a class="btn btn-primary" href="user/upload/prescription">New Prescription</a></div>
+                <div class="col-md-2  m-2"><a class="btn btn-primary" href="{{route('upload.prescription.page')}}">New Prescription</a></div>
             </div>
             <div class="card">
                 <div class="card-header">{{ __('Prescription List') }}</div>
